@@ -11,6 +11,5 @@ public interface IEventDispatcher {
     public void dispatchEvent(EventModel event);
     public Boolean hasEventListener(String type);
     public void removeAllListeners();
-    //public void toastListener(String s);
 
 }

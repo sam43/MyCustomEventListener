@@ -1,5 +1,7 @@
 package com.sam43.mycustomeventlistener.Event;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
@@ -10,7 +12,8 @@ import java.util.Objects;
 
 public class EventDIspatcher implements IEventDispatcher {
 
-    protected ArrayList<Listener> listenerList = new ArrayList<>();
+    private ArrayList<Listener> listenerList = new ArrayList<>();
+    private Class<? extends EventDIspatcher> context;
 
 
     @Override
@@ -61,6 +64,5 @@ public class EventDIspatcher implements IEventDispatcher {
             listenerList.remove(listener);
             removeAllListeners();
         }
-
     }
 }
