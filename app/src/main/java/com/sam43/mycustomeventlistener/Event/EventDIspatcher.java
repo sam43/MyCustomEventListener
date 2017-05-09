@@ -10,6 +10,7 @@ import java.util.Objects;
  * Created by sam43 on 5/9/17.
  */
 
+@SuppressWarnings("ALL")
 public class EventDIspatcher implements IEventDispatcher {
 
     private ArrayList<Listener> listenerList = new ArrayList<>();
@@ -41,8 +42,8 @@ public class EventDIspatcher implements IEventDispatcher {
 
     @Override
     public void dispatchEvent(EventModel event) {
-        for(Iterator<Listener> iterator = listenerList.iterator();iterator.hasNext();) {
-            Listener listener = iterator.next();
+
+        for (Listener listener : listenerList) {       /** replacement of "for(Iterator<Listener> iterator = listenerList.iterator();iterator.hasNext();)" with "for-each"*/
 
             if (Objects.equals(event.getStrType(), listener.getType())) {
                 IEventHandler handler = listener.getHandler();
@@ -58,9 +59,8 @@ public class EventDIspatcher implements IEventDispatcher {
 
     @Override
     public void removeAllListeners() {
-        for(Iterator<Listener> iterator = listenerList.iterator();iterator.hasNext();) {
+        for (Listener listener : listenerList) {
 
-            Listener listener = iterator.next();
             listenerList.remove(listener);
             removeAllListeners();
         }

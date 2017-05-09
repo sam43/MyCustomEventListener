@@ -8,14 +8,14 @@ public class EventModel {
 
     public static final String COMPLETE = "complete";
 
-    protected String strType = "";
-    protected Object params;
+    private String strType = "";
+    private Object params;
 
     public EventModel(String type,Object params){
         initProperties(type,params);
     }
 
-    protected void initProperties(String type,Object params){
+    private void initProperties(String type,Object params){
         strType = type;
         this.params = params;
     }

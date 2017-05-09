@@ -4,21 +4,21 @@ package com.sam43.mycustomeventlistener.Event;
  * Created by sam43 on 5/9/17.
  */
 
-public class Listener {
+class Listener {
 
     private String type;
     private IEventHandler handler;
 
-    public Listener(String type, IEventHandler handler) {
+    Listener(String type, IEventHandler handler) {
         this.type = type;
         this.handler = handler;
     }
 
-    public String getType() {
+    String getType() {
         return type;
     }
 
-    public IEventHandler getHandler() {
+    IEventHandler getHandler() {
         return handler;
     }
 }
